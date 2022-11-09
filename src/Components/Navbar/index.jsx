@@ -32,7 +32,8 @@ export default function Header() {
                 <div className={active} >
                     <ul className='appleFont' >
                         <li onClick={navToggle}><NavLink to={'/'} > Home </NavLink></li>
-                        <li onClick={navToggle}><NavLink to={'/blog'} > Blog </NavLink></li>
+                        <li onClick={navToggle}><NavLink to={'/blogs'} > Blogs </NavLink></li>
+                        <li onClick={navToggle}><NavLink to={'/buzz'} > Buzz </NavLink></li>
                         <li onClick={navToggle}><NavLink to={'/about'} > About </NavLink></li>
                         <li onClick={navToggle}><NavLink to={'/contact'} > Contact </NavLink></li>
                     </ul>

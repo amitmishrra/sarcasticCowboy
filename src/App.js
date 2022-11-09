@@ -4,6 +4,7 @@ import Home from "./pages/Home";
 import Blog from "./pages/Blog";
 import About from "./pages/About";
 import Contact from "./pages/Contact";
+import Buzz from "./pages/Buzz/Index";
 
 function App() {
   return (
@@ -16,12 +17,20 @@ function App() {
                 <Home />
               </CommonContainer>
             } />
-          <Route path="/blog"
+          <Route path="/blogs"
             element={
               <CommonContainer>
                 <Blog />
               </CommonContainer>
             } />
+
+          <Route path="/buzz"
+            element={
+              <CommonContainer>
+                <Buzz/>
+              </CommonContainer>
+            } />
+
           <Route path="/about"
             element={
               <CommonContainer>
