@@ -1,5 +1,8 @@
+import FacebookIcon from '@mui/icons-material/Facebook';
+import TwitterIcon from '@mui/icons-material/Twitter';
+import InstagramIcon from '@mui/icons-material/Instagram';
 import { NavLink } from "react-router-dom"
-import "./style.css"
+import "./styles.css"
 
 const Home = () => {
     return (
@@ -9,15 +12,18 @@ const Home = () => {
                     <div className="frst flex items-center justify-center">
                         <div>
                             <div className="txtGrp">
-                                <h2>Blogger. Copywriter. Memer.</h2>
-                                <h1>Sarcastic Cowboy</h1>
+                                <h2 className="subTitle">Blogger. Copywriter. Memer.</h2>
+                                <h1 className="tiTle">Sarcastic Cowboy.</h1>
                             </div>
-                            <div className="btnGrp flex flex-col items-center md:items-start">
+                            <div className="btnGrp flex flex-col items-start">
                                 <NavLink to="/about"><button>Know More</button></NavLink> 
-                                <div className="social">
-                                    <i>f</i>
-                                    <i>t</i>
-                                    <i>i</i>
+                                <div className="social flex gap-3">
+                                    <FacebookIcon fontSize="large" />
+                                    <TwitterIcon fontSize="large" />
+                                    <a href="https://www.instagram.com/sarcasticcowboy/">
+                                        <InstagramIcon fontSize="large" />
+                                    </a>
+                                    
                                 </div>
                             </div>
                         </div>

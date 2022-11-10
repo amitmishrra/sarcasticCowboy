@@ -1,4 +1,4 @@
-import "./style.css"
+import "./styleA.css"
 import { NavLink } from "react-router-dom"
 
 const About = () => {
