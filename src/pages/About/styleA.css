@@ -4,13 +4,13 @@ body {
 }
 
 .frstSec {
-    height: 65vh;
+    /* height: 65vh; */
     width: 100%;
     padding: 2rem;
 }
 
 .scndSec {
-    height: 115vh;
+    /* height: 115vh; */
     padding: 0 2rem;
 }
 
@@ -40,15 +40,17 @@ h2 {
 }
 
 .imge1 {
-    height: 250px;
+    height: auto;
     width: 280px;
+    border-radius: 14px;
 }
 
 .imge2 {
-    height: 150px;
+    height: auto;
     width: 150px;
     margin-left: 200px;
     margin-top: 60px;
+    border-radius: 16px;
 }
 
 @media (min-width: 768px) {
@@ -56,7 +58,7 @@ h2 {
     .frstSec {
         height: 50vh;
         padding: 0 10vw;
-        margin: 18vh 0;
+        margin: 12vh 0;
     }
 
     .scndSec {
@@ -70,8 +72,8 @@ h2 {
     }
 
     .frstSec .scnd {
-        height: 370px;
-        width: 35%;
+        
+        width: 50%;
     }
 
     h1 {
@@ -88,12 +90,12 @@ h2 {
     }
 
     .imge1 {
-        height: 400px;
+        height: auto;
         width: 450px;
     }
 
     .imge2 {
-        height: 200px;
+        height: auto;
         width: 200px;
         margin-left: 350px;
         margin-top: 120px;
