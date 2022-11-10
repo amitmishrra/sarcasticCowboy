@@ -1,3 +1,4 @@
+import { NavLink } from "react-router-dom"
 import "./style.css"
 
 const Home = () => {
@@ -12,7 +13,7 @@ const Home = () => {
                                 <h1>Sarcastic Cowboy</h1>
                             </div>
                             <div className="btnGrp flex flex-col items-center md:items-start">
-                                <a href=""><button>Know More</button></a>
+                                <NavLink to="/about"><button>Know More</button></NavLink> 
                                 <div className="social">
                                     <i>f</i>
                                     <i>t</i>

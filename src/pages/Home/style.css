@@ -29,10 +29,6 @@ h2 {
     margin-bottom: 10px;
 }
 
-.btnGrp {
-    margin-top: 2rem;
-}
-
 button {
     border: solid 1px black;
     border-radius: 0.25rem;
@@ -41,7 +37,7 @@ button {
 }
 
 .social {
-    margin-top: 15px;
+    margin-top: 40px;
 }
 
 .social i {
@@ -76,7 +72,7 @@ button {
 
     h1 {
         font-weight: 600;
-        font-size: 3rem;
+        font-size: 3.5rem;
         line-height: 1;
     }
     
@@ -90,11 +86,11 @@ button {
     .btnGrp {
         height: 20px;
         width: 66.666667%;
+        margin-top: 15px;
     }
 
     .social {
-        margin: 40px;
-        margin-left: 140px;
+        margin-top: 30px;
     }
 
     .img1 {
@@ -105,7 +101,7 @@ button {
     .img2 {
         height: 200px;
         width: 200px;
-        margin-left: 350px;
+        margin-left: 400px;
         margin-top: 120px;
     }
 }
