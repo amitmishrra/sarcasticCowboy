@@ -1,0 +1,110 @@
+section {
+    height: 90vh;
+    width: 100%;
+    padding: 2rem;
+}
+
+section .frst {
+    height: 50%;
+    width: 100%;
+}
+
+section .scnd {
+    width: 100%;
+    position: relative
+}
+
+h1 {
+    font-family: 'Prata', serif;
+    font-weight: 600;
+    font-size: 2rem;
+    line-height: 1;
+}
+
+h2 {
+    font-family: 'Prata', serif;
+    font-weight: 600;
+    font-size: 1.3rem;
+    line-height: 2.25rem;
+    margin-bottom: 10px;
+}
+
+.btnGrp {
+    margin-top: 2rem;
+}
+
+button {
+    border: solid 1px black;
+    border-radius: 0.25rem;
+    padding: 5px;
+}
+
+.social {
+    margin-top: 15px;
+}
+
+.social i {
+    background: rgb(0, 47, 255);
+    padding: 5px 14px;
+    border-radius: 50%;
+    margin: 8px;
+}
+
+.img1 {
+    height: 250px;
+    width: 250px;
+}
+
+.img2 {
+    height: 150px;
+    width: 150px;
+    margin-left: 200px;
+    margin-top: 60px;
+}
+
+@media (min-width: 768px) {
+    section {
+        padding: 5rem;
+    }
+
+    .frst,
+    .scnd {
+        height: 100%;
+        width: 50%;
+    }
+
+    h1 {
+        font-weight: 600;
+        font-size: 3rem;
+        line-height: 1;
+    }
+    
+    h2 {
+        font-weight: 600;
+        font-size: 1.5rem;
+        line-height: 2.25rem;
+        margin-bottom: 10px;
+    }
+
+    .btnGrp {
+        height: 20px;
+        width: 66.666667%;
+    }
+
+    .social {
+        margin: 40px;
+        margin-left: 140px;
+    }
+
+    .img1 {
+        height: 400px;
+        width: 400px;
+    }
+
+    .img2 {
+        height: 200px;
+        width: 200px;
+        margin-left: 350px;
+        margin-top: 120px;
+    }
+}
