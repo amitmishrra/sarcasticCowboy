@@ -1,15 +1,15 @@
-section {
+.homeSec {
     /* height: 90vh; */
     width: 100%;
     padding: 1rem;
 }
 
-section .frst {
+.homeSec .frst {
     /* height: 40vh; */
     width: 100%;
 }
 
-section .scnd {
+.homeSec .scnd {
     height: 40vh;
     width: 100%;
     position: relative
@@ -26,7 +26,7 @@ section .scnd {
     font-weight: 600;
     font-size: 1.4rem;
     line-height: 2.25rem;
-    margin-bottom: 10px;
+    margin: 10px 0;
 }
 
 .KNowButton {
@@ -65,8 +65,7 @@ section .scnd {
 }
 
 @media (min-width: 768px) {
-    section {
-        padding: 2rem;
+    .homeSec {
         height: 80vh;
     }
 
