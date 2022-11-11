@@ -10,8 +10,9 @@ body {
 }
 
 .scndSec {
-    height: 120vh;
+    /* height: 120vh; */
     padding: 0 2rem;
+    padding-bottom: 20px;
 }
 
 .frstSec .frst {
@@ -53,12 +54,12 @@ h2 {
     border-radius: 16px;
 }
 
-@media (min-width: 768px) {
+@media (min-width: 1024px) {
 
     .frstSec {
-        height: 70vh;
-        padding: 0 10vw;
-        margin-top: 14vh;
+        /* height: 70vh; */
+        /* padding: 0 10vw; */
+        margin-top: 5vh;
         margin-bottom: 0px;
     }
 

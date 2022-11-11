@@ -22,13 +22,13 @@ const Home = () => {
     return (
         <>
             <main className="pt-[70px] flex justify-center">
-                <section className="homeSec max-w-6xl flex md:flex-row flex-col items-center justify-center">
+                <section className="homeSec max-w-6xl flex lg:flex-row flex-col items-center justify-center">
                     <div className="frst flex flex-col items-center justify-center">
                         <div >
-                            <div className="greet text-[65px] md:text-[90px] mb-[10px] text-center md:text-left logotext">
+                            <div className="greet text-[65px] lg:text-[90px] mb-[10px] text-center lg:text-left logotext">
                                 {greet[index]}
                             </div>
-                            <div className="txtGrp w-[100%] text-center md:text-left">
+                            <div className="txtGrp w-[100%] text-center lg:text-left">
                                 <h1 className="tiTle">Sarcastic Cowboy here.</h1>
                                 {/* <h2 className="subTitle textFont">Crack Jokes, Not Hearts</h2> */}
                                 <p className=" mt-3">
@@ -38,8 +38,8 @@ const Home = () => {
 
                             </div>
                             <div className="btnGrp flex flex-col items-start">
-                                <NavLink to="/about" className={'flex justify-center items-center w-[100%] md:justify-start'}><button className='KNowButton'>Know More</button></NavLink>
-                                <div className="social flex gap-3 invisible md:visible">
+                                <NavLink to="/about" className={'flex justify-center items-center w-[100%] lg:justify-start'}><button className='KNowButton'>Know More</button></NavLink>
+                                <div className="social flex gap-3 invisible lg:visible">
                                     <a target={"_blank"} href="https://www.facebook.com/SarcasticCowboy/">
                                         <FacebookIcon className='socialMedia' fontSize="large" />
                                     </a>
@@ -56,7 +56,7 @@ const Home = () => {
                             </div>
                         </div>
                     </div>
-                    <div className="scnd max-w-md flex items-center justify-center">
+                    <div className="scnd max-w-lg flex items-center justify-center">
                         <img src="assets/home4.png" className="img1 " alt="" />
                         {/* <img src="assets/home2.jpg" className="img2 absolute borderShadow" alt="" /> */}
                     </div>

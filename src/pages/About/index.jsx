@@ -4,24 +4,15 @@ import React, { useState } from 'react'
 import { useEffect } from 'react';
 
 const About = () => {
-    const [first, setFirst] = useState(0)
-    const [second, setSecond] = useState(first + 1)
-    useEffect(() => {
-        const intervalId = setInterval(() => {
-            first === 3 ? setFirst(0) : setFirst(first + 1);
-            second === 3 ? setSecond(0) : setSecond(second + 1);
-        }, 3000)
-        return () => clearInterval(intervalId);
-    }, [first])
+
 
     return (
         <>
             <main className="pt-[60px]">
-                <section className="frstSec flex flex-col md:flex-row items-center justify-center md:justify-between">
+                <section className="frstSec flex flex-col lg:flex-row items-center justify-center lg:justify-between">
 
-                    <div className="frst relative flex items-center justify-center mt-[30px] md:mt-0">
+                    <div className="frst relative flex items-center justify-center mt-[30px] md:mt-0 hidden lg:flex">
                         <img src={`assets/aboutPage/about1.jpg`} className="imge1 borderShadow" alt="" />
-                        {/* <img src={`assets/aboutPage/about${second}.jpg`} className="imge2 absolute borderShadow invisible md:visible" alt="" /> */}
                     </div>
                     <div className="scnd flex flex-col items-start justify-center w-[1/2]">
                         <h1 className="md:text-[70px] text-[40px]">Sarcastic Cowboy</h1>
@@ -33,7 +24,9 @@ const About = () => {
                             The full-time job that earns me money is about finding bugs and helping them get eliminated. No, you got it absolutely wrong I don’t work in a pest control company. Instead, I work in one of the leading IT companies located in India as a Senior Software Development Engineer in Test(SDET)  where my job is to code and find defects in the other’s code.
                         </p>
                     </div>
-
+                    <div className="frst relative flex items-center justify-center mt-[30px] md:mt-0 lg:hidden ">
+                        <img src={`assets/aboutPage/about1.jpg`} className="imge1 borderShadow" alt="" />
+                    </div>
 
                 </section>
                 <section className="scndSec text-[20px]">
