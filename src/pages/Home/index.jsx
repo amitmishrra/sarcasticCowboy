@@ -22,10 +22,10 @@ const Home = () => {
     return (
         <>
             <main className="pt-[70px] flex justify-center">
-                <section className="homeSec max-w-6xl flex lg:flex-row flex-col items-center justify-center">
+                <section className="homeSec max-w-7xl flex lg:flex-row flex-col items-center justify-between">
                     <div className="frst flex flex-col items-center justify-center">
                         <div >
-                            <div className="greet text-[65px] lg:text-[90px] mb-[10px] text-center lg:text-left logotext">
+                            <div className="greet text-[75px] lg:text-[90px] mb-[10px] text-center lg:text-left logotext">
                                 {greet[index]}
                             </div>
                             <div className="txtGrp w-[100%] text-center lg:text-left">
@@ -39,7 +39,7 @@ const Home = () => {
                             </div>
                             <div className="btnGrp flex flex-col items-start">
                                 <NavLink to="/about" className={'flex justify-center items-center w-[100%] lg:justify-start'}><button className='KNowButton'>Know More</button></NavLink>
-                                <div className="social flex gap-3 invisible lg:visible">
+                                <div className="social  gap-3 hidden lg:flex">
                                     <a target={"_blank"} href="https://www.facebook.com/SarcasticCowboy/">
                                         <FacebookIcon className='socialMedia' fontSize="large" />
                                     </a>
@@ -56,8 +56,8 @@ const Home = () => {
                             </div>
                         </div>
                     </div>
-                    <div className="scnd max-w-lg flex items-center justify-center">
-                        <img src="assets/home4.png" className="img1 " alt="" />
+                    <div className="scnd mt-4 flex items-center justify-center">
+                        <img src="assets/homePage.jpg" className="" alt="" />
                         {/* <img src="assets/home2.jpg" className="img2 absolute borderShadow" alt="" /> */}
                     </div>
                 </section>

@@ -15,9 +15,8 @@ const About = () => {
                         <img src={`assets/aboutPage/about1.jpg`} className="imge1 borderShadow" alt="" />
                     </div>
                     <div className="scnd flex flex-col items-start justify-center w-[1/2]">
-                        <h1 className="md:text-[70px] text-[40px]">Sarcastic Cowboy</h1>
+                        <h1 className="md:text-[70px] text-[40px]">Who Am I?</h1>
                         <p className="md:text-[22px] text-[20px] md:mt-6 mt-[6px]">
-                            Hi and Welcome to Sarcastic Cowboy.
                             I am a blogger, copywriter, memer, self-acclaimed cricket expert, and movie buff.
                         </p>
                         <p className=" md:text-[22px] text-[20px] md:mt-6 mt-[6px]">
