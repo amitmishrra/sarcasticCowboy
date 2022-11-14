@@ -24,7 +24,7 @@ export default function Header() {
                         <img className='w-[150px] lg:w-[130px]' src="assets/logo.png" alt="" />
                     </div>
 
-                    <div className='invisible lg:visible text-[40px] logotext'>
+                    <div className='invisible lg:visible text-[25px] logotext'>
                         Sarcastic Cowboy
                     </div>
                 </div>
