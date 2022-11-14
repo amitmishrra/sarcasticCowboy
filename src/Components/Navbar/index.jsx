@@ -21,10 +21,10 @@ export default function Header() {
             <div className="header h-full ">
                 <div className='flex justify-center items-center'>
                     <div className="logo">
-                        <img className='w-[150px] md:w-[130px]' src="assets/logo.png" alt="" />
+                        <img className='w-[150px] lg:w-[130px]' src="assets/logo.png" alt="" />
                     </div>
 
-                    <div className='invisible md:visible text-[40px] logotext'>
+                    <div className='invisible lg:visible text-[25px] logotext'>
                         Sarcastic Cowboy
                     </div>
                 </div>

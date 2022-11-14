@@ -21,23 +21,31 @@ const Home = () => {
     }, [index])
     return (
         <>
-            <main className="pt-[70px]">
-                <section className=" flex md:flex-row flex-col items-center justify-center">
+            <main className="pt-[70px] flex justify-center">
+                <section className="homeSec max-w-7xl flex lg:flex-row flex-col items-center justify-between">
                     <div className="frst flex flex-col items-center justify-center">
-                        <div className="greet text-[100px] mb-[10px] text-center md:text-left logotext">
-                            {greet[index]}
-                        </div>
                         <div >
-                            <div className="txtGrp w-[100%] text-center md:text-left">
+                            <div className="greet text-[75px] lg:text-[90px] mb-[10px] text-center lg:text-left logotext">
+                                {greet[index]}
+                            </div>
+                            <div className="txtGrp w-[100%] text-center lg:text-left">
                                 <h1 className="tiTle">Sarcastic Cowboy here.</h1>
-                                <h2 className="subTitle textFont">Blogger | Copywriter | Memer</h2>
+                                {/* <h2 className="subTitle textFont">Crack Jokes, Not Hearts</h2> */}
+                                <p className=" mt-3">
+                                    This blog is created with an intent to entertain and not educate. I write short articles /jokes to lift up your mood and make you smile with my words, at times you may not find it funny, so just bear with me as I am still sharpening my craft and everyone is born nude not funny and mastering comedy requires time.
+                                </p>
+
 
                             </div>
                             <div className="btnGrp flex flex-col items-start">
-                                <NavLink to="/about" className={'flex justify-center items-center w-[100%] md:justify-start'}><button className='KNowButton'>Know More</button></NavLink>
-                                <div className="social flex gap-3 invisible md:visible">
-                                    <FacebookIcon className='socialMedia' fontSize="large" />
-                                    <TwitterIcon className='socialMedia' fontSize="large" />
+                                <NavLink to="/about" className={'flex justify-center items-center w-[100%] lg:justify-start'}><button className='KNowButton'>Know More</button></NavLink>
+                                <div className="social  gap-3 hidden lg:flex">
+                                    <a target={"_blank"} href="https://www.facebook.com/SarcasticCowboy/">
+                                        <FacebookIcon className='socialMedia' fontSize="large" />
+                                    </a>
+                                    <a target={"_blank"} href="https://twitter.com/SarcasticCowboy?t=cWfGGLY0dvPcJXmzEo65zQ&s=09">
+                                        <TwitterIcon className='socialMedia' fontSize="large" />
+                                    </a>
                                     <a target={"_blank"} href="https://www.instagram.com/sarcasticcowboy/">
                                         <InstagramIcon className='socialMedia' fontSize="large" />
                                     </a>
@@ -48,8 +56,8 @@ const Home = () => {
                             </div>
                         </div>
                     </div>
-                    <div className="scnd relative flex items-center justify-center">
-                        <img src="assets/home4.png" className="img1 " alt="" />
+                    <div className="scnd mt-4 flex items-center justify-center">
+                        <img src="assets/homePage.jpg" className="" alt="" />
                         {/* <img src="assets/home2.jpg" className="img2 absolute borderShadow" alt="" /> */}
                     </div>
                 </section>
