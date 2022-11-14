@@ -2,6 +2,7 @@ import { Route, Routes, HashRouter } from "react-router-dom"
 import CommonContainer from "./CommanContainer";
 import Home from "./pages/Home";
 import Blog from "./pages/Blog";
+import MainBlog from "./Components/mainBlog";
 import About from "./pages/About";
 import Contact from "./pages/Contact";
 import Buzz from "./pages/Buzz/Index";
@@ -11,16 +12,25 @@ function App() {
     <>
       <HashRouter>
         <Routes>
+
           <Route path="/"
             element={
               <CommonContainer>
                 <Home />
               </CommonContainer>
             } />
+
           <Route path="/blogs"
             element={
               <CommonContainer>
                 <Blog />
+              </CommonContainer>
+            } />
+          
+          <Route path="/mainBlog"
+            element={
+              <CommonContainer>
+                <MainBlog />
               </CommonContainer>
             } />
 
@@ -37,12 +47,14 @@ function App() {
                 <About />
               </CommonContainer>
             } />
+
           <Route path="/contact"
             element={
               <CommonContainer>
                 <Contact />
               </CommonContainer>
             } />
+
         </Routes>
       </HashRouter>
     </>
