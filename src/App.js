@@ -2,10 +2,12 @@ import { Route, Routes, HashRouter } from "react-router-dom"
 import CommonContainer from "./CommanContainer";
 import Home from "./pages/Home";
 import Blog from "./pages/Blog";
-import MainBlog from "./Components/mainBlog";
 import About from "./pages/About";
 import Contact from "./pages/Contact";
 import Buzz from "./pages/Buzz/Index";
+import ThreeD from "./Articles/ThreeD";
+import SaveMoney from "./Articles/SaveMoney";
+import Dating from "./Articles/Dating";
 
 function App() {
   return (
@@ -24,13 +26,6 @@ function App() {
             element={
               <CommonContainer>
                 <Blog />
-              </CommonContainer>
-            } />
-          
-          <Route path="/mainBlog"
-            element={
-              <CommonContainer>
-                <MainBlog />
               </CommonContainer>
             } />
 
@@ -52,6 +47,27 @@ function App() {
             element={
               <CommonContainer>
                 <Contact />
+              </CommonContainer>
+            } />
+          
+          <Route path="/3_D's_of_my_life"
+            element={
+              <CommonContainer>
+                <ThreeD />
+              </CommonContainer>
+            } />
+          
+          <Route path="/How_to_save_money"
+            element={
+              <CommonContainer>
+                <SaveMoney />
+              </CommonContainer>
+            } />
+          
+          <Route path="/Are_you_dating_a_parasite"
+            element={
+              <CommonContainer>
+                <Dating />
               </CommonContainer>
             } />
 

@@ -15,7 +15,7 @@ const LatestBlog = ({ heading, paragraph, imgURL }) => {
                         {paragraph.slice(0, 600)}
                     </p>
                     <button>
-                        <NavLink to="/mainBlog">
+                        <NavLink to="/Are_you_dating_a_parasite">
                             Read more -{'>'}
                         </NavLink>
                     </button>
