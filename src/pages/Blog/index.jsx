@@ -67,7 +67,9 @@ const Blog = () => {
                         imgURL={Blogdata[0].imgURL}
                     />
                 </div>
-
+                <p className="lg:hidden text-xl pb-3 underline underline-offset-2 flex items-center justify-center ">
+                    More from Sarcastic Cowboy
+                    </p>
                 <div className="otherBlogs flex justify-center items-center flex-wrap">
                     {
                         Blogdata.map((item) => {
