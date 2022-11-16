@@ -2,8 +2,8 @@ import Article from "../Components/Article/Article"
 
 const DatingData = {
     Title: "/Are_you_dating_a_parasite",
+    Date: "6 Feb 2022",
     Heading: "Are you dating a parasite or she is indeed your Girlfriend?",
-    subtitle: "Life has its own way of teaching, you just need to be good at picking those subtle hints",
     img1: "assets/images/dating.jpeg",
     parag1:
         "Being single for the past 25 years, I was depressed, devastated, and felt defeated, wearing the burden of these 3 D’s along with a helmet on my head, I was driving my way down to the office on my beloved Yamaha R15 v2 with an empty cow tailback seat.",
@@ -14,7 +14,7 @@ const DatingData = {
     parag4:
         "With a big question mark on my head, I closed the current tab displaying URL https://www.google.co.in/ and opened another tab to enter http://www.thefreedictionary.com/ only to find out what “Parasite” really meant? A few seconds later, I got three meanings with one central idea. Here are they:",
     parag5:
-        "a) One who habitually takes advantage of the generosity of others without making any useful return. \n b) One who lives off and flatters the rich; a sycophant \n c) An organism that grows, feeds, and is sheltered on or in a different organism while contributing nothing to the survival of its host.",
+        `a) One who habitually takes advantage of the generosity of others without making any useful return. \n b) One who lives off and flatters the rich; a sycophant \n c) An organism that grows, feeds, and is sheltered on or in a different organism while contributing nothing to the survival of its host.`,
     parag6:
         "Now after having a better picture of what Parasite looked like, I tried for “Girlfriend” to know the perfect definition. And see what all I got!",
     parag7:
@@ -34,6 +34,7 @@ const Dating = () => {
         <>
             <Article
                 Title={DatingData.Title}
+                Date={DatingData.Date}
                 Heading={DatingData.Heading}
                 img1={DatingData.img1}   
                 parag1={DatingData.parag1}

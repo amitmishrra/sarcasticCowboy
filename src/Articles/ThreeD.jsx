@@ -1,10 +1,11 @@
 import Article from "../Components/Article/Article"
-import { Blogdata } from "../pages/Blog"
+// import { Blogdata } from "../pages/Blog"
 
-Blogdata[0] = ThreeDData;
+// Blogdata[0] = ThreeDData;
 
 const ThreeDData = {
     Title: "/3_D's_of_my_life",
+    Date: "10 Feb 2022",
     Heading: "3 Ds of My Life That Changed My Life Forever",
     subtitle: "Life has its own way of teaching, you just need to be good at picking those subtle hints",
     img1: "assets/images/3d.jpeg",
@@ -27,6 +28,7 @@ const ThreeD = () => {
         <>
             <Article 
             Title={ThreeDData.Title}
+            Date={ThreeDData.Date}
             Heading={ThreeDData.Heading}
             subtitle={ThreeDData.subtitle} 
             img1={ThreeDData.img1} 

@@ -1,7 +1,7 @@
 import "./Style.css"
 import { NavLink } from "react-router-dom"
 
-const LatestBlog = ({ heading, paragraph, imgURL }) => {
+const LatestBlog = ({ Title , heading, paragraph, imgURL }) => {
     return (
         <>
             <section className="containers box-border flex flex-col md:flex-row items-center justify-between m-10 h-[50vh] w-[100vw] md:w-[85vw] md:h-[60vh] rounded-lg bg-gray-200  borderShadow">
@@ -15,7 +15,7 @@ const LatestBlog = ({ heading, paragraph, imgURL }) => {
                         {paragraph.slice(0, 600)}
                     </p>
                     <button>
-                        <NavLink to="/Are_you_dating_a_parasite">
+                        <NavLink to={Title}>
                             Read more -{'>'}
                         </NavLink>
                     </button>

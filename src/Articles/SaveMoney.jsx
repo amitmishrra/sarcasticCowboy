@@ -2,6 +2,7 @@ import Article from "../Components/Article/Article"
 
 const SaveMoneyData = {
     Title:"/How_to_save_money",
+    Date: "13 Feb 2022",
     Heading: "Smart ways to save money by shaving your head during Covid Pandemic",
     img1:
         "assets/images/Save.jpeg",
@@ -31,7 +32,8 @@ const SaveMoney = () => {
     return (
         <>
             <Article
-                title={SaveMoneyData.Title}
+                Title={SaveMoneyData.Title}
+                Date={SaveMoneyData.Date}
                 Heading={SaveMoneyData.Heading}
                 img1={SaveMoneyData.img1}
                 parag1={SaveMoneyData.parag1}

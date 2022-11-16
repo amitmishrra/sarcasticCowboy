@@ -1,7 +1,7 @@
 import { NavLink } from "react-router-dom"
 import "./Style.css"
 
-const OtherBlogs = ({ heading, paragraph, imgURL }) => {
+const OtherBlogs = ({ Title , heading, paragraph, imgURL }) => {
     return (
         <>
             <div className="container flex items-center p-3 m-5  w-[90vw] md:w-[40vw] rounded-2xl bg-gray-200 borderShadow">
@@ -10,7 +10,7 @@ const OtherBlogs = ({ heading, paragraph, imgURL }) => {
                     <h1 className="text-lg md:text-2xl font-semibold mb-3">{heading}</h1>
                     <p>{paragraph.slice(0, 100)}</p>
                     <button>
-                        <NavLink to="/mainBlog">
+                        <NavLink to={Title}>
                             Read more
                         </NavLink>
                     </button>
