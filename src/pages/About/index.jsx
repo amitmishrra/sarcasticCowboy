@@ -8,10 +8,10 @@ const About = () => {
 
     return (
         <>
-            <main className="pt-[60px]">
+            <main className="pt-[60px]  max-w-[1200px] m-auto">
                 <section className="frstSec flex flex-col lg:flex-row items-center justify-center lg:justify-between">
 
-                    <div className="frst relative flex items-center justify-center mt-[30px] md:mt-0 hidden lg:flex">
+                    <div className="frst relative flex items-center mt-[30px] md:mt-0 hidden lg:flex">
                         <img src={`assets/aboutPage/about1.jpg`} className="imge1 borderShadow" alt="" />
                     </div>
                     <div className="scnd flex flex-col items-start justify-center w-[1/2]">
