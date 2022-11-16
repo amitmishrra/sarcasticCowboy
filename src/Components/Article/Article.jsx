@@ -8,9 +8,9 @@ const Article = ({
 
     return (
         <>
-            <main className=" relative pt-[75px] md:pt-[100px] flex flex-col md:flex-row  justify-between ">
+            <main className="maxWidth relative pt-[75px] md:pt-[100px] flex flex-col md:flex-row  justify-between ">
                 <section className="leftSec  md:w-[70%] flex flex-col md:items-center justify-center">
-                    <div className=" px-10  md:px-20 gap-y-4 md:gap-y-8 py-8 flex flex-col items-start">
+                    <div className=" px-8  md:px-8 gap-y-4 md:gap-y-8 py-8 flex flex-col items-start">
                         <p className="text-2xl md:text-4xl font-bold headingText">
                             {Heading}
                         </p>
@@ -25,7 +25,7 @@ const Article = ({
 
                         <img src={img1} alt="" />
                     </div>
-                    <div className="parag px-10 md:px-20 flex flex-col items-start gap-y-8 pb-8 text-lg md:text-2xl font-[source-serif-pro] ">
+                    <div className="parag px-10 md:px-8 flex flex-col items-start gap-y-8 pb-8 text-lg md:text-2xl font-[source-serif-pro] ">
                         <p className="empty:hidden">
                             {parag1}
                         </p>
@@ -62,7 +62,7 @@ const Article = ({
                         </p>
                     </div>
                 </section>
-                <section className="rightSec p-10 md:px-5  md:py-[20px] border-t-2 md:border-l border-[#cecece] shadow-lg shadow-[#c2c2c2] md:sticky md:top-[100px] right-0 md:w-[30%] md:h-[100vh] flex items-start justify-center ">
+                <section className="rightSec p-10 md:px-5  md:py-[20px] border-t-2 md:border-t-0 md:border-l border-[#cecece] md:sticky md:top-[100px] right-0 md:w-[30%] md:h-[100vh] flex items-start justify-center ">
                     <div className="flex flex-col items-start justify-center">
                         <p className="md:text-2xl mb-5 text-lg font-medium" >
                             More from Sarcastic Cowboy</p>

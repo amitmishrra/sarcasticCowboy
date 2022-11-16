@@ -32,7 +32,7 @@ const Home = () => {
                                 <h1 className="tiTle">Sarcastic Cowboy here.</h1>
                                 {/* <h2 className="subTitle textFont">Crack Jokes, Not Hearts</h2> */}
                                 <p className=" mt-3">
-                                    This blog is created with an intent to entertain and not educate. I write short articles /jokes to lift up your mood and make you smile with my words, at times you may not find it funny, so just bear with me as I am still sharpening my craft and everyone is born nude not funny and mastering comedy requires time.
+                                    This blog is created with an intent to entertain and not educate. I write short articles, jokes to lift up your mood and make you smile with my words, at times you may not find it funny, so just bear with me as I am still sharpening my craft and everyone is born nude not funny and mastering comedy requires time.
                                 </p>
 
 
@@ -49,14 +49,14 @@ const Home = () => {
                                     <a target={"_blank"} href="https://www.instagram.com/sarcasticcowboy/">
                                         <InstagramIcon className='socialMedia' fontSize="large" />
                                     </a>
-                                    <LinkedInIcon className='socialMedia' fontSize="large" />
+                                
 
 
                                 </div>
                             </div>
                         </div>
                     </div>
-                    <div className="scnd mt-4 flex items-center justify-center">
+                    <div className="scnd mt-4 flex items-center justify-end">
                         <img src="assets/homePage.jpg" className="" alt="" />
                         {/* <img src="assets/home2.jpg" className="img2 absolute borderShadow" alt="" /> */}
                     </div>

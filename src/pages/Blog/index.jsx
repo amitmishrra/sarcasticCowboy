@@ -58,7 +58,7 @@ const Blog = () => {
 
     return (
         <>
-            <div className="pt-[80px]">
+            <div className="pt-[80px] max-w-[1200px] m-auto">
                 <div className="latestBlog flex justify-center items-center">
                     <LatestBlog
                         Title={Blogdata[0].Title}

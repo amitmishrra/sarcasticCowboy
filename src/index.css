@@ -43,3 +43,8 @@ code {
 .transition{
   transition: 0.4s;
 }
+
+.maxWidth{
+  max-width: 1200px;
+  margin: auto;
+}

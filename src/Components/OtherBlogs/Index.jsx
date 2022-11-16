@@ -4,7 +4,7 @@ import "./Style.css"
 const OtherBlogs = ({ Title, heading, paragraph, imgURL }) => {
     return (
         <>
-            <div className="container flex items-center p-3 m-5  w-[80vw] md:w-[41vw] md:h-[15rem] rounded-2xl bg-gray-200 borderShadow">
+            <div className="container flex items-center p-3 m-5  w-[80vw] md:w-[35vw] md:h-[15rem] rounded-2xl bg-gray-200 borderShadow">
                 <img src={imgURL} className=" object-cover h-[9rem] w-[40%] md:h-full rounded" alt="" />
                 <div className=" w-[60%] h-full pl-3 flex flex-col items-start justify-between">
                     <h1 className="text-lg lg:hidden md:text-2xl font-semibold">
