@@ -21,16 +21,16 @@ const QuotesBuzz = ({ quote }) => {
 
     return (
         <>
-            <div class="container px-5 mx-auto ">
-                <div class="xl:w-1/2 lg:w-3/4 w-full mx-auto flex items-start justify-between text-left border-b-2 py-5 ">
-                    <p class=" pr-8 leading-relaxed text-base font-medium quoteTxt">
-                        {quote.slice(0, 100)}
+            <div class="container px-6 mx-auto maxWidth">
+                <div class="xl:w-1/2 lg:w-3/4 w-full mx-auto  text-left border-b-2 pt-5 pb-1 ">
+                    <p class="leading-relaxed text-base font-medium quoteTxt">
+                        {quote}
                     </p>
 
                     <div onClick={handleLike} className="heart-btn">
                         <div className={isActive? "content heart-active" : "content"}>
                             <span className={isActive? "heart heart-active": "heart"}></span>
-                            <span className={isActive? "text heart-active": "text"}>LIkes</span>
+                            {/* <span className={isActive? "text heart-active": "text"}>LIkes</span> */}
                             <span className={isActive? "numb heart-active": "numb"}>{likes}</span>
                         </div>
                     </div>

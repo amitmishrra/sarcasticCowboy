@@ -3,7 +3,8 @@
 .quoteTxt {
     font-family: 'Calligraffitti', cursive;
     font-size: larger;
-    font-weight: 600;
+    font-weight: 550;
+    letter-spacing: .1rem;
 }
 
 .heart-btn {
@@ -19,10 +20,10 @@
     cursor: pointer;
 }
 
-.content.heart-active {
+/* .content.heart-active {
     border-color: #f9b9c4;
     background: #fbd0d8;
-}
+} */
 
 .heart {
     position: absolute;
@@ -32,18 +33,18 @@
     height: 60px;
     width: 60px;
     top: 50%;
-    left: 21%;
+    left: 5%;
     transform: translate(-50%, -50%);
 }
 
 .text {
     font-size: 12px;
-    margin-left: 30px;
     color: grey;
     font-family: 'Montserrat', sans-serif;
 }
 
 .numb {
+    margin-left: 30px;
     color: #9C9496;
 }
 
