@@ -9,7 +9,7 @@ const Miniblog = ({ Title, heading, paragraph, imgURL, Date }) => {
                     <img src={imgURL} className=" object-cover h-[100px] w-[40%] rounded" alt="" />
                     <div className="  w-[60%] pl-3 gap-2  flex flex-col items-start ">
                         <h1 className="text-lg md:text-xl font-medium ">
-                            {heading.slice(0,35)}...
+                            {heading.slice(0,30)}...
                         </h1>
                         {/* <p>{paragraph.slice(0, 50)}</p> */}
                         <p>

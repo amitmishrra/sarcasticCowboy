@@ -1,4 +1,5 @@
 import Header from "./Components/Navbar"
+import Footer from "./Components/Footer"
 
 const CommonContainer = ({children}) => {
     return (
@@ -6,6 +7,7 @@ const CommonContainer = ({children}) => {
         <>
         <Header/>
         {children}
+        <Footer />
         </>
     )
 }

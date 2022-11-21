@@ -21,7 +21,7 @@ const Home = () => {
     }, [index])
     return (
         <>
-            <main className="pt-[70px] flex justify-center">
+            <main className="md:p-0 pt-[100px] p-10 min-h-[100vh] flex items-center justify-center">
                 <section className="homeSec max-w-7xl flex lg:flex-row flex-col items-center justify-between">
                     <div className="frst flex flex-col items-center justify-center">
                         <div >
@@ -56,8 +56,8 @@ const Home = () => {
                             </div>
                         </div>
                     </div>
-                    <div className="scnd mt-4 flex items-center justify-end">
-                        <img src="assets/homePage.jpg" className="" alt="" />
+                    <div className="scnd mt-4 flex items-center justify-center md:justify-end">
+                        <img src="assets/homePage.jpg" className=" object-cover h-[350px] md:h-max" alt="" />
                         {/* <img src="assets/home2.jpg" className="img2 absolute borderShadow" alt="" /> */}
                     </div>
                 </section>

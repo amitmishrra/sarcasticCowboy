@@ -16,7 +16,7 @@ const OtherBlogs = ({ Title, heading, paragraph, imgURL }) => {
                         <p className="lg:hidden">...</p>
                     </h1>
                     <p className="hidden lg:block">
-                        {paragraph.slice(0, 100)}
+                        {paragraph.slice(0, 65)}
                     </p>
                     <NavLink to={Title} >
                         <button className="underline">

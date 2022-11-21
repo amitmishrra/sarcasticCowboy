@@ -19,15 +19,16 @@ export default function Header() {
     return (
         <div className="headWrapper z-[1] h-[75px] md:h-[100px]">
             <div className="header h-full ">
-                <div className='flex justify-center items-center'>
-                    <div className="logo">
-                        <img className='w-[100px] lg:w-[130px]' src="assets/logo.png" alt="" />
+                <NavLink to={'/'} >
+                    <div className='flex justify-center items-center'>
+                        <div className="logo">
+                            <img className='w-[100px] lg:w-[130px]' src="assets/logo.png" alt="" />
+                        </div>
+                        <div className='invisible lg:visible text-[25px] logotext'>
+                            Sarcastic Cowboy
+                        </div>
                     </div>
-
-                    <div className='invisible lg:visible text-[25px] logotext'>
-                        Sarcastic Cowboy
-                    </div>
-                </div>
+                </NavLink>
 
                 <div className={active} >
                     <ul className='appleFont' >
