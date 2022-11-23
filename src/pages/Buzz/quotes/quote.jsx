@@ -6,7 +6,7 @@ let likedItems = JSON.parse(localStorage.getItem("likedItems")) || [];
 
 const QuotesBuzz = ({ quote, totalLikes, id }) => {
 
-    const [isActive, setIsActive] = useState(false);
+    const [isActive, setIsActive] = useState(likedItems.includes(id));
     const [likes, setLike] = useState(0 || totalLikes);
     const [classes, setClasses] = useState("");
 
@@ -14,7 +14,7 @@ const QuotesBuzz = ({ quote, totalLikes, id }) => {
         setIsActive (current => !current);
         console.log(isActive);
         console.log(classes);
-        if (isActive && likedItems.includes(id) ) {
+        if (isActive  ) {
 
             fetch(`https://sarcasticbackend.vercel.app/updateLikes/${id}`,{
             method : "PATCH",
@@ -70,7 +70,7 @@ const QuotesBuzz = ({ quote, totalLikes, id }) => {
 
                     <div  className="heart-btn">
                         <div className={isActive? "content heart-active flex justify-center item-center w-[60px] mt-[10px]" : "content flex justify-center item-center w-[60px] mt-[10px]"}>
-                            <span onClick={handleLike} className={isActive && likedItems.includes(id) ? "heart heart-active": "heart"}></span>
+                            <span onClick={handleLike} className={isActive  ? "heart heart-active": "heart"}></span>
                             <span className={isActive? "numb heart-active": "numb"}>{likes}</span>
                         </div>
                     </div>
