@@ -30,7 +30,7 @@
 
 .heart {
     position: absolute;
-    background: url("/public/assets/like_btn/img.png") no-repeat;
+    background: url("../../../public/assets/like_btn/img.png") no-repeat;
     background-position: left;
     background-size: 2900%;
     height: 60px;
