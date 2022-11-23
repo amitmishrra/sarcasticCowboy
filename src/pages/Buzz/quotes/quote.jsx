@@ -11,51 +11,55 @@ const QuotesBuzz = ({ quote, totalLikes, id }) => {
     const [classes, setClasses] = useState("");
 
     const handleLike = (currentId) => {
-        setIsActive (current => !current);
+        setIsActive(current => !current);
         console.log(isActive);
         console.log(classes);
-        if (isActive  ) {
+        if (isActive) {
 
-            fetch(`https://sarcasticbackend.vercel.app/updateLikes/${id}`,{
-            method : "PATCH",
-            headers : {
-                "content-Type": "application/json",
-                "Accept": "application/json",
-                "Access-Control-Allow-Origin": "*"
-        },
-            body : JSON.stringify({
-                newLike : totalLikes - 1
-            })
-        }).then(res=>res.json()).then(res=>console.log(res))
+            fetch(`https://sarcasticbackend.vercel.app/updateLikes/${id}`, {
+                method: "PATCH",
+                headers: {
+                    "content-Type": "application/json",
+                    "Accept": "application/json",
+                    "Access-Control-Allow-Origin": "*"
+                },
+                body: JSON.stringify({
+                    newLike: totalLikes - 1
+                })
+            }).then(res => res.json()).then(res => console.log(res))
 
             setLike(likes - 1);
 
-            likedItems.splice(likedItems.indexOf(id), likedItems.indexOf(id));
+            if (likedItems.length == 1) {
+                likedItems.splice(likedItems.indexOf(id));
+            } else { likedItems.splice(likedItems.indexOf(id), likedItems.indexOf(id)); }
+
+
 
         } else {
             setLike(likes + 1);
 
-        likedItems.push(id)
+            likedItems.push(id)
 
-            fetch(`https://sarcasticbackend.vercel.app/updateLikes/${id}`,{
-            method : "PATCH",
-            headers : {
-                "content-Type": "application/json",
-                "Accept": "application/json",
-                "Access-Control-Allow-Origin": "*"
-        },
-            body : JSON.stringify({
-                newLike : totalLikes + 1
-            })
-        }).then(res=>res.json()).then(res=>console.log(res))
+            fetch(`https://sarcasticbackend.vercel.app/updateLikes/${id}`, {
+                method: "PATCH",
+                headers: {
+                    "content-Type": "application/json",
+                    "Accept": "application/json",
+                    "Access-Control-Allow-Origin": "*"
+                },
+                body: JSON.stringify({
+                    newLike: totalLikes + 1
+                })
+            }).then(res => res.json()).then(res => console.log(res))
 
 
         }
 
-        
+
     }
 
-    useEffect(()=>{
+    useEffect(() => {
         localStorage.setItem("likedItems", JSON.stringify(likedItems));
         console.log(likedItems)
     }, [likes])
@@ -68,13 +72,13 @@ const QuotesBuzz = ({ quote, totalLikes, id }) => {
                         {quote}
                     </p>
 
-                    <div  className="heart-btn">
-                        <div className={isActive? "content heart-active flex justify-center item-center w-[60px] mt-[10px]" : "content flex justify-center item-center w-[60px] mt-[10px]"}>
-                            <span onClick={handleLike} className={isActive  ? "heart heart-active": "heart"}></span>
-                            <span className={isActive? "numb heart-active": "numb"}>{likes}</span>
+                    <div className="heart-btn">
+                        <div className={isActive ? "content heart-active flex justify-center item-center w-[60px] mt-[10px]" : "content flex justify-center item-center w-[60px] mt-[10px]"}>
+                            <span onClick={handleLike} className={isActive ? "heart heart-active" : "heart"}></span>
+                            <span className={isActive ? "numb heart-active" : "numb"}>{likes}</span>
                         </div>
                     </div>
-                    
+
                 </div>
             </div>
         </>
