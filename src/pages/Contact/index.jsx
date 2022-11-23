@@ -3,8 +3,30 @@ import FacebookIcon from '@mui/icons-material/Facebook';
 import TwitterIcon from '@mui/icons-material/Twitter';
 import InstagramIcon from '@mui/icons-material/Instagram';
 import LinkedInIcon from '@mui/icons-material/LinkedIn';
+import { useEffect, useState } from "react";
+import emailjs from '@emailjs/browser';
 
 const Contact = () => {
+
+    const [name, setName] = useState("");
+    const [email, setMail] = useState("");
+    const [message, setMessage] = useState("");
+
+    let messageData = {
+        from_name : name,
+        mail : email,
+        message : message
+    }
+
+    const sendMessage=()=>{
+        emailjs.send('service_mhsuc6g', 'template_5eghhze', messageData, '7JPlkoF3xDWkv7XjM')
+        .then((result) => {
+            console.log(result.text);
+        }, (error) => {
+            console.log(error.text);
+        });
+    }
+
     return (
         <>
             <div className="contactpage flex flex-col lg:flex-row justify-center  h-screen items-center">
@@ -20,12 +42,33 @@ const Contact = () => {
 
                     <div className="contactBox lg:w-[75%] w-[95%] flex flex-col justify-around m-auto h-[55vh] mt-[30px] pb-[20px]">
                         <div className="imputField flex flex-col justify-around h-[80%]">
-                            <input type="text" className="input" placeholder="Full Name" />
-                            <input type="mail" className="input" placeholder="Email" />
-                            <textarea type="text" className="input message" placeholder="Your Message" />
+                            <input 
+                            type="text" 
+                            className="input" 
+                            placeholder="Full Name" 
+                            onChange={e=>{
+                                setName(e.target.value)
+                            }}
+                            />
+                            <input 
+                            type="mail" 
+                            className="input" 
+                            placeholder="Email"
+                            onChange={e=>{
+                                setMail(e.target.value)
+                            }}
+                            />
+                            <textarea 
+                            type="text" 
+                            className="input message" 
+                            placeholder="Your Message" 
+                            onChange={e=>{
+                                setMessage(e.target.value)
+                            }}
+                            />
                         </div>
                         <div className="SendButton flex justify-end items-center w-[80%]">
-                            <button className="KNowButton">Send</button>
+                            <button onClick={sendMessage} className="KNowButton">Send</button>
                         </div>
                     </div>
                 </div>
