@@ -1,6 +1,8 @@
-import React from "react"
+import React, { useEffect } from "react"
 import { useState } from "react"
 import "../Style.css"
+
+let likedItems = JSON.parse(localStorage.getItem("likedItems")) || [];
 
 const QuotesBuzz = ({ quote, totalLikes, id }) => {
 
@@ -12,7 +14,7 @@ const QuotesBuzz = ({ quote, totalLikes, id }) => {
         setIsActive (current => !current);
         console.log(isActive);
         console.log(classes);
-        if (isActive) {
+        if (isActive && likedItems.includes(id) ) {
 
             fetch(`https://sarcasticbackend.vercel.app/updateLikes/${id}`,{
             method : "PATCH",
@@ -27,9 +29,13 @@ const QuotesBuzz = ({ quote, totalLikes, id }) => {
         }).then(res=>res.json()).then(res=>console.log(res))
 
             setLike(likes - 1);
+
+            likedItems.splice(likedItems.indexOf(id), likedItems.indexOf(id));
+
         } else {
             setLike(likes + 1);
 
+        likedItems.push(id)
 
             fetch(`https://sarcasticbackend.vercel.app/updateLikes/${id}`,{
             method : "PATCH",
@@ -49,6 +55,11 @@ const QuotesBuzz = ({ quote, totalLikes, id }) => {
         
     }
 
+    useEffect(()=>{
+        localStorage.setItem("likedItems", JSON.stringify(likedItems));
+        console.log(likedItems)
+    }, [likes])
+
     return (
         <>
             <div class="container px-6 mx-auto maxWidth">
@@ -59,7 +70,7 @@ const QuotesBuzz = ({ quote, totalLikes, id }) => {
 
                     <div  className="heart-btn">
                         <div className={isActive? "content heart-active flex justify-center item-center w-[60px] mt-[10px]" : "content flex justify-center item-center w-[60px] mt-[10px]"}>
-                            <span onClick={handleLike} className={isActive? "heart heart-active": "heart"}></span>
+                            <span onClick={handleLike} className={isActive && likedItems.includes(id) ? "heart heart-active": "heart"}></span>
                             <span className={isActive? "numb heart-active": "numb"}>{likes}</span>
                         </div>
                     </div>

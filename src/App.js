@@ -29,7 +29,7 @@ function App() {
               </CommonContainer>
             } />
 
-          <Route path="/buzz"
+          <Route path="/quotes"
             element={
               <CommonContainer>
                 <Buzz/>
