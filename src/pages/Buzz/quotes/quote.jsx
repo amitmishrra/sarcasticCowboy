@@ -2,21 +2,51 @@ import React from "react"
 import { useState } from "react"
 import "../Style.css"
 
-const QuotesBuzz = ({ quote }) => {
+const QuotesBuzz = ({ quote, totalLikes, id }) => {
 
     const [isActive, setIsActive] = useState(false);
-    const [likes, setLike] = useState(0);
+    const [likes, setLike] = useState(0 || totalLikes);
     const [classes, setClasses] = useState("");
 
-    const handleLike = () => {
+    const handleLike = (currentId) => {
         setIsActive (current => !current);
         console.log(isActive);
         console.log(classes);
         if (isActive) {
+
+            fetch(`https://sarcasticbackend.vercel.app/updateLikes/${id}`,{
+            method : "PATCH",
+            headers : {
+                "content-Type": "application/json",
+                "Accept": "application/json",
+                "Access-Control-Allow-Origin": "*"
+        },
+            body : JSON.stringify({
+                newLike : totalLikes - 1
+            })
+        }).then(res=>res.json()).then(res=>console.log(res))
+
             setLike(likes - 1);
         } else {
             setLike(likes + 1);
+
+
+            fetch(`https://sarcasticbackend.vercel.app/updateLikes/${id}`,{
+            method : "PATCH",
+            headers : {
+                "content-Type": "application/json",
+                "Accept": "application/json",
+                "Access-Control-Allow-Origin": "*"
+        },
+            body : JSON.stringify({
+                newLike : totalLikes + 1
+            })
+        }).then(res=>res.json()).then(res=>console.log(res))
+
+
         }
+
+        
     }
 
     return (
@@ -27,18 +57,13 @@ const QuotesBuzz = ({ quote }) => {
                         {quote}
                     </p>
 
-                    <div onClick={handleLike} className="heart-btn">
-                        <div className={isActive? "content heart-active" : "content"}>
-                            <span className={isActive? "heart heart-active": "heart"}></span>
-                            {/* <span className={isActive? "text heart-active": "text"}>LIkes</span> */}
+                    <div  className="heart-btn">
+                        <div className={isActive? "content heart-active flex justify-center item-center w-[60px] mt-[10px]" : "content flex justify-center item-center w-[60px] mt-[10px]"}>
+                            <span onClick={handleLike} className={isActive? "heart heart-active": "heart"}></span>
                             <span className={isActive? "numb heart-active": "numb"}>{likes}</span>
                         </div>
                     </div>
-                    {/* <div className="flex items-center mt-3 gap-3 ">
-                        <button className="border bg-gray-50 rounded-md">Share</button>
-                        <button className="border bg-gray-50 rounded-md">Copy</button>
-                        
-                    </div> */}
+                    
                 </div>
             </div>
         </>

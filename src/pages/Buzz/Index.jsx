@@ -2,29 +2,15 @@ import './Style.css'
 import { Blogdata } from '../Blog'
 import Miniblog from '../../Components/miniblog'
 import QuotesBuzz from './quotes/quote'
+import { useEffect, useState } from "react"
 
-const quoteData = [
-    {
-        quote: "“Be yourself; everyone else is already taken.”"
-    },
-    {
-        quote: "“I'm selfish, impatient and a little insecure. I make mistakes, I am out of control and at times hard to handle. But if you can't handle me at my worst, then you sure as hell don't deserve me at my best.”"
-    },
-    {
-        quote: "“Two things are infinite: the universe and human stupidity; and I'm not sure about the universe.”"
-    },
-    {
-        quote: "“A room without books is like a body without a soul.”"
-    },
-    {
-        quote: "“You know you're in love when you can't fall asleep because reality is finally better than your dreams.”"
-    },
-    {
-        quote: "“Be the change that you wish to see in the world.”"
-    },
-]
 
 const Buzz = () => {
+    const [quoteData, setQuoteData] = useState([])
+
+    useEffect(()=>{
+        fetch("https://sarcasticbackend.vercel.app/getQuotes").then(res=>res.json()).then(res=>setQuoteData(res))
+    })
     return (
         <>
             <main className=" pt-[70px] md:pt-[100px] min-h-[100vh] flex flex-col md:flex-row">
@@ -33,7 +19,9 @@ const Buzz = () => {
                         quoteData.map((item) => {
                             return (
                                 <QuotesBuzz
-                                    quote={item.quote}   
+                                    quote={item.quote}  
+                                    totalLikes={item.likes}
+                                    id={item._id} 
                                 />
                             )
                         })
@@ -77,5 +65,5 @@ const Buzz = () => {
     )
 }
 
-export { quoteData }
+// export { quoteData }
 export default Buzz

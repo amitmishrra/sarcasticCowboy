@@ -1,9 +1,12 @@
 @import url('https://fonts.googleapis.com/css2?family=Calligraffitti&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300&display=swap');
 
 .quoteTxt {
-    font-family: 'Calligraffitti', cursive;
+    /* font-family: 'Calligraffitti', cursive; */
+    font-family: 'Quicksand', sans-serif;
+    font-style: italic;
     font-size: larger;
-    font-weight: 550;
+    font-weight: 400;
     letter-spacing: .1rem;
 }
 
