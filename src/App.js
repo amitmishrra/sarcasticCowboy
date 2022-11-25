@@ -4,10 +4,11 @@ import Home from "./pages/Home";
 import Blog from "./pages/Blog";
 import About from "./pages/About";
 import Contact from "./pages/Contact";
-import Buzz from "./pages/Buzz/Index";
+import Buzz from "./pages/Buzz/quotes/Index";
 import ThreeD from "./Articles/ThreeD";
 import SaveMoney from "./Articles/SaveMoney";
 import Dating from "./Articles/Dating";
+import JokesPage from "./pages/Buzz/jokes";
 
 function App() {
   return (
@@ -33,6 +34,13 @@ function App() {
             element={
               <CommonContainer>
                 <Buzz/>
+              </CommonContainer>
+            } />
+          
+          <Route path="/jokes"
+            element={
+              <CommonContainer>
+                <JokesPage/>
               </CommonContainer>
             } />
 

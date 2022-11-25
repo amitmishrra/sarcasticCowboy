@@ -1,6 +1,6 @@
 import React, { useEffect } from "react"
 import { useState } from "react"
-import "../Style.css"
+import "./Style.css"
 
 let likedItems = JSON.parse(localStorage.getItem("likedItems")) || [];
 

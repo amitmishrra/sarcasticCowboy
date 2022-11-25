@@ -1,7 +1,7 @@
 import './Style.css'
-import { Blogdata } from '../Blog'
-import Miniblog from '../../Components/miniblog'
-import QuotesBuzz from './quotes/quote'
+import { Blogdata } from '../../Blog'
+import Miniblog from '../../../Components/miniblog'
+import QuotesBuzz from './quote'
 import { useEffect, useState } from "react"
 
 

@@ -35,6 +35,7 @@ export default function Header() {
                         <li onClick={navToggle}><NavLink to={'/'} > Home </NavLink></li>
                         <li onClick={navToggle}><NavLink to={'/blogs'} > Blogs </NavLink></li>
                         <li onClick={navToggle}><NavLink to={'/quotes'} > Quotes </NavLink></li>
+                        <li onClick={navToggle}><NavLink to={'/jokes'} > Jokes </NavLink></li>
                         <li onClick={navToggle}><NavLink to={'/about'} > About </NavLink></li>
                         <li onClick={navToggle}><NavLink to={'/contact'} > Contact </NavLink></li>
                     </ul>
