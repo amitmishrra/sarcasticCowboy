@@ -12,8 +12,6 @@ const QuotesBuzz = ({ quote, totalLikes, id }) => {
 
     const handleLike = (currentId) => {
         setIsActive(current => !current);
-        console.log(isActive);
-        console.log(classes);
         if (isActive) {
 
             fetch(`https://sarcasticbackend.vercel.app/updateLikes/${id}`, {
@@ -26,15 +24,13 @@ const QuotesBuzz = ({ quote, totalLikes, id }) => {
                 body: JSON.stringify({
                     newLike: totalLikes - 1
                 })
-            }).then(res => res.json()).then(res => console.log(res))
+            }).then(res => res.json());
 
             setLike(likes - 1);
 
             if (likedItems.length == 1) {
                 likedItems.splice(likedItems.indexOf(id));
             } else { likedItems.splice(likedItems.indexOf(id), likedItems.indexOf(id)); }
-
-
 
         } else {
             setLike(likes + 1);
@@ -51,17 +47,11 @@ const QuotesBuzz = ({ quote, totalLikes, id }) => {
                 body: JSON.stringify({
                     newLike: totalLikes + 1
                 })
-            }).then(res => res.json()).then(res => console.log(res))
-
-
+            }).then(res => res.json());
         }
-
-
     }
-
     useEffect(() => {
         localStorage.setItem("likedItems", JSON.stringify(likedItems));
-        console.log(likedItems)
     }, [likes])
 
     return (

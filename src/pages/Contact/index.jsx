@@ -13,18 +13,18 @@ const Contact = () => {
     const [message, setMessage] = useState("");
 
     let messageData = {
-        from_name : name,
-        mail : email,
-        message : message
+        from_name: name,
+        mail: email,
+        message: message
     }
 
-    const sendMessage=()=>{
+    const sendMessage = () => {
         emailjs.send('service_mhsuc6g', 'template_5eghhze', messageData, '7JPlkoF3xDWkv7XjM')
-        .then((result) => {
-            console.log(result.text);
-        }, (error) => {
-            console.log(error.text);
-        });
+            .then((result) => {
+                console.log(result.text);
+            }, (error) => {
+                console.log(error.text);
+            });
     }
 
     return (
@@ -42,29 +42,29 @@ const Contact = () => {
 
                     <div className="contactBox lg:w-[75%] w-[95%] flex flex-col justify-around m-auto h-[55vh] mt-[30px] pb-[20px]">
                         <div className="imputField flex flex-col justify-around h-[80%]">
-                            <input 
-                            type="text" 
-                            className="input" 
-                            placeholder="Full Name" 
-                            onChange={e=>{
-                                setName(e.target.value)
-                            }}
+                            <input
+                                type="text"
+                                className="input"
+                                placeholder="Full Name"
+                                onChange={e => {
+                                    setName(e.target.value)
+                                }}
                             />
-                            <input 
-                            type="mail" 
-                            className="input" 
-                            placeholder="Email"
-                            onChange={e=>{
-                                setMail(e.target.value)
-                            }}
+                            <input
+                                type="mail"
+                                className="input"
+                                placeholder="Email"
+                                onChange={e => {
+                                    setMail(e.target.value)
+                                }}
                             />
-                            <textarea 
-                            type="text" 
-                            className="input message" 
-                            placeholder="Your Message" 
-                            onChange={e=>{
-                                setMessage(e.target.value)
-                            }}
+                            <textarea
+                                type="text"
+                                className="input message"
+                                placeholder="Your Message"
+                                onChange={e => {
+                                    setMessage(e.target.value)
+                                }}
                             />
                         </div>
                         <div className="SendButton flex justify-end items-center w-[80%]">
@@ -74,20 +74,20 @@ const Contact = () => {
                 </div>
 
                 <div className="right-side lg:w-1/2 flex flex-col lg:flex-row justify-center items-center pb-4">
-                <div className="social lg:gap-5 gap-8  lg:flex">
-                                    <a target={"_blank"} href="https://www.facebook.com/SarcasticCowboy/">
-                                        <FacebookIcon className='socialMedia' fontSize="large" />
-                                    </a>
-                                    <a target={"_blank"} href="https://twitter.com/SarcasticCowboy?t=cWfGGLY0dvPcJXmzEo65zQ&s=09">
-                                        <TwitterIcon className='socialMedia' fontSize="large" />
-                                    </a>
-                                    <a target={"_blank"} href="https://www.instagram.com/sarcasticcowboy/">
-                                        <InstagramIcon className='socialMedia' fontSize="large" />
-                                    </a>
-                                    <LinkedInIcon className='socialMedia' fontSize="large" />
+                    <div className="social lg:gap-5 gap-8  lg:flex">
+                        <a target={"_blank"} href="https://www.facebook.com/SarcasticCowboy/">
+                            <FacebookIcon className='socialMedia' fontSize="large" />
+                        </a>
+                        <a target={"_blank"} href="https://twitter.com/SarcasticCowboy?t=cWfGGLY0dvPcJXmzEo65zQ&s=09">
+                            <TwitterIcon className='socialMedia' fontSize="large" />
+                        </a>
+                        <a target={"_blank"} href="https://www.instagram.com/sarcasticcowboy/">
+                            <InstagramIcon className='socialMedia' fontSize="large" />
+                        </a>
+                        <LinkedInIcon className='socialMedia' fontSize="large" />
 
 
-                                </div>
+                    </div>
                 </div>
             </div>
         </>

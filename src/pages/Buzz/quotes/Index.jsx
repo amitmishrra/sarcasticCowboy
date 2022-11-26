@@ -3,19 +3,22 @@ import { Blogdata } from '../../Blog'
 import Miniblog from '../../../Components/miniblog'
 import QuotesBuzz from './quote'
 import { useEffect, useState } from "react"
-
+import CircularProgress from '@mui/material/CircularProgress';
 
 const Buzz = () => {
     const [quoteData, setQuoteData] = useState([])
 
     useEffect(()=>{
-        fetch("https://sarcasticbackend.vercel.app/getQuotes").then(res=>res.json()).then(res=>setQuoteData(res))
+        fetch("https://sarcasticbackend.vercel.app/getQuotes").then(res=>res.json()).then(res=>setQuoteData(res.reverse()))
     })
+
+
     return (
         <>
             <main className=" pt-[70px] md:pt-[100px] min-h-[100vh] flex flex-col md:flex-row">
                 <section class="md:w-[70%]">
-                    {
+                    { 
+                    quoteData.length > 0 ? 
                         quoteData.map((item) => {
                             return (
                                 <QuotesBuzz
@@ -24,7 +27,14 @@ const Buzz = () => {
                                     id={item._id} 
                                 />
                             )
-                        })
+                        }): 
+
+                        <div className="flex  justify-center flex-col items-center h-[70vh]">
+                           <div className="mb-4 text-[20px]">
+                           Loading Quotes...
+                           </div>
+                            <CircularProgress />
+                        </div>
                     }
                     {/* <div class="container px-5 py-24 mx-auto">
                         <div class="xl:w-1/2 lg:w-3/4 w-full mx-auto text-center">

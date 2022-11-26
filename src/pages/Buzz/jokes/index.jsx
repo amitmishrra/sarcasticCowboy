@@ -2,24 +2,43 @@ import React from "react";
 import Jokes from "./jokes";
 import { Blogdata } from "../../Blog";
 import Miniblog from "../../../Components/miniblog";
-
+import { useEffect, useState } from "react"
+import CircularProgress from '@mui/material/CircularProgress';
 
 const JokesPage = () => {
+
+
+    const [JokesData, setJokesData] = useState([])
+
+    useEffect(()=>{
+        fetch("https://sarcasticbackend.vercel.app/getJokes").then(res=>res.json()).then(res=>setJokesData(res.reverse()))
+    })
+
     return (
         <>
             <main className=" pt-[70px] md:pt-[100px] min-h-[100vh] flex flex-col md:flex-row">
                 <section class="md:w-[70%]">
-                    {/* {
-                        quoteData.map((item) => {
+                    {
+
+                            JokesData.length > 0 ? 
+
+                        JokesData.map((item) => {
                             return (
                                 <Jokes
-                                    quote={item.quote}
+                                    joke={item.joke}
                                     totalLikes={item.likes}
                                     id={item._id}
                                 />
                             )
-                        })
-                    } */}
+                        }) : 
+
+                        <div className="flex  justify-center flex-col items-center h-[70vh]">
+                           <div className="mb-4 text-[20px]">
+                           Loading Jokes...
+                           </div>
+                            <CircularProgress />
+                        </div>
+                    }
                     {/* <div class="container px-5 py-24 mx-auto">
                         <div class="xl:w-1/2 lg:w-3/4 w-full mx-auto text-center">
                             <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="inline-block w-8 h-8 text-gray-400 mb-8" viewBox="0 0 975.036 975.036">
