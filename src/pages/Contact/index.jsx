@@ -3,19 +3,58 @@ import FacebookIcon from '@mui/icons-material/Facebook';
 import TwitterIcon from '@mui/icons-material/Twitter';
 import InstagramIcon from '@mui/icons-material/Instagram';
 import LinkedInIcon from '@mui/icons-material/LinkedIn';
+import { Snackbar } from "@mui/material";
 import { useEffect, useState } from "react";
 import emailjs from '@emailjs/browser';
+import { color } from "@mui/system";
 
 const Contact = () => {
-
     const [name, setName] = useState("");
     const [email, setMail] = useState("");
     const [message, setMessage] = useState("");
+    const [open, setOpen] = useState(false);
+    const [snack, setSnack] = useState("");
+    const [btnActive, setBtnActive] = useState(true);
+
 
     let messageData = {
         from_name: name,
         mail: email,
         message: message
+    }
+
+    const handleClick = () => {
+        if (name.length < 1) {
+            setSnack("please enter name");
+            setOpen(true);
+            setBtnActive(true);
+        }
+        else if (name.length <= 3) {
+            setSnack("name too short");
+            setOpen(true);
+            setBtnActive(true);
+        }
+        else if (email.length < 1) {
+            setSnack("please enter email");
+            setOpen(true);
+            setBtnActive(true);
+        }
+        else if (!email.includes("@" && ".")) {
+            setSnack("email must contain @ and .");
+            setOpen(true);
+            setBtnActive(true);
+        }
+        else if (message.length < 1) {
+            setSnack("please enter message");
+            setOpen(true);
+            setBtnActive(true);
+        }
+        else {
+            setOpen(false);
+            setBtnActive(false);
+            btnActive? sendMessage() : console.log("already sent");
+            // sendMessage();
+        }
     }
 
     const sendMessage = () => {
@@ -36,18 +75,20 @@ const Contact = () => {
                             Need to get in touch?
                         </div>
                         <div className="para">
-                            Hello friends to contact me and this blog please leave your name, email address, subject and message below.
+                            Hello friends to contact me and this blog please leave your name, email address and message below.
                         </div>
                     </div>
 
                     <div className="contactBox lg:w-[75%] w-[95%] flex flex-col justify-around m-auto h-[55vh] mt-[30px] pb-[20px]">
                         <div className="imputField flex flex-col justify-around h-[80%]">
                             <input
+                                // required
                                 type="text"
                                 className="input"
                                 placeholder="Full Name"
                                 onChange={e => {
                                     setName(e.target.value)
+                                    setBtnActive(true)
                                 }}
                             />
                             <input
@@ -56,6 +97,7 @@ const Contact = () => {
                                 placeholder="Email"
                                 onChange={e => {
                                     setMail(e.target.value)
+                                    setBtnActive(true)
                                 }}
                             />
                             <textarea
@@ -64,11 +106,14 @@ const Contact = () => {
                                 placeholder="Your Message"
                                 onChange={e => {
                                     setMessage(e.target.value)
+                                    setBtnActive(true)
                                 }}
                             />
                         </div>
                         <div className="SendButton flex justify-end items-center w-[80%]">
-                            <button onClick={sendMessage} className="KNowButton">Send</button>
+                            <button onClick={handleClick}
+                                style={{ 'color': `${btnActive ? "" : "white"}`, 'backgroundColor': `${btnActive ? "" : "black"}` }}
+                                className="KNowButton">{btnActive ? "Send" : "Sent"}</button>
                         </div>
                     </div>
                 </div>
@@ -84,11 +129,15 @@ const Contact = () => {
                         <a target={"_blank"} href="https://www.instagram.com/sarcasticcowboy/">
                             <InstagramIcon className='socialMedia' fontSize="large" />
                         </a>
-                        <LinkedInIcon className='socialMedia' fontSize="large" />
-
-
                     </div>
                 </div>
+                <Snackbar
+                    open={open}
+                    autoHideDuration={6000}
+                    // onClose={handleClose}
+                    message={snack}
+                // action={action}
+                />
             </div>
         </>
     )

@@ -24,22 +24,24 @@ const Home = () => {
             <main className="md:p-0 pt-[100px] p-10 min-h-[100vh] flex items-center justify-center">
                 <section className="homeSec max-w-7xl flex lg:flex-row flex-col items-center justify-between">
                     <div className="frst flex flex-col items-center justify-center">
-                        <div >
+                        <div>
                             <div className="greet text-[75px] lg:text-[90px] mb-[10px] text-center lg:text-left logotext">
                                 {greet[index]}
                             </div>
                             <div className="txtGrp w-[100%] text-center lg:text-left">
                                 <h1 className="tiTle">Sarcastic Cowboy here.</h1>
                                 {/* <h2 className="subTitle textFont">Crack Jokes, Not Hearts</h2> */}
-                                <p className=" mt-3">
+                                <p className=" text-justify mt-3">
                                     This blog is created with an intent to entertain and not educate. I write short articles, jokes to lift up your mood and make you smile with my words, at times you may not find it funny, so just bear with me as I am still sharpening my craft and everyone is born nude not funny and mastering comedy requires time.
                                 </p>
 
 
                             </div>
                             <div className="btnGrp flex flex-col items-start">
-                                <NavLink to="/about" className={'flex justify-center items-center w-[100%] lg:justify-start'}><button className='KNowButton'>Know More</button></NavLink>
-                                <div className="social  gap-3 hidden lg:flex">
+                                <NavLink to="/about" className={'flex justify-center items-center w-max lg:justify-start mt-6'}>
+                                    <button className='KNowButton'>Read More</button>
+                                </NavLink>
+                                <div className="social gap-3 hidden lg:flex">
                                     <a target={"_blank"} href="https://www.facebook.com/SarcasticCowboy/">
                                         <FacebookIcon className='socialMedia' fontSize="large" />
                                     </a>
@@ -49,9 +51,6 @@ const Home = () => {
                                     <a target={"_blank"} href="https://www.instagram.com/sarcasticcowboy/">
                                         <InstagramIcon className='socialMedia' fontSize="large" />
                                     </a>
-                                
-
-
                                 </div>
                             </div>
                         </div>
