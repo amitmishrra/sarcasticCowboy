@@ -16,7 +16,7 @@ const OtherBlogs = ({ Title, heading, paragraph, imgURL }) => {
                             {heading.slice(0, 80)}
                             <p className="lg:hidden">...</p>
                         </h1>
-                        <p className="hidden lg:block">
+                        <p className="hidden text-justify lg:block">
                             {paragraph.slice(0, 65)}
                         </p>
                         <button className="readbtn">

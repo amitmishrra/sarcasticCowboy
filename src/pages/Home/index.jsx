@@ -37,10 +37,15 @@ const Home = () => {
 
 
                             </div>
-                            <div className="btnGrp flex flex-col items-start">
-                                <NavLink to="/about" className={'flex justify-center items-center w-max lg:justify-start mt-6'}>
-                                    <button className='KNowButton'>Read More</button>
-                                </NavLink>
+                            <div className="btnGrp flex flex-col md:items-start">
+                                <div className="flex gap-5 items-center justify-center">
+                                    <NavLink to="/about" className={'flex justify-center items-center w-max lg:justify-start mt-6'}>
+                                        <button className='KNowButton'>Know More</button>
+                                    </NavLink>
+                                    <NavLink to="/blogs" className={'flex justify-center items-center w-max lg:justify-start mt-6'}>
+                                        <button className='blogsButton'>Read Blogs</button>
+                                    </NavLink>
+                                </div>
                                 <div className="social gap-3 hidden lg:flex">
                                     <a target={"_blank"} href="https://www.facebook.com/SarcasticCowboy/">
                                         <FacebookIcon className='socialMedia' fontSize="large" />
