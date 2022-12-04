@@ -25,7 +25,7 @@ const Article = ({
 
                         <img src={img1} alt="" />
                     </div>
-                    <div className="parag px-10 md:px-8 flex flex-col items-start gap-y-8 pb-8 text-lg md:text-2xl font-[source-serif-pro] ">
+                    <div className="parag px-8 flex flex-col items-start gap-y-8 pb-8 text-justify text-lg md:text-2xl font-[source-serif-pro] ">
                         <p className="empty:hidden">
                             {parag1}
                         </p>
