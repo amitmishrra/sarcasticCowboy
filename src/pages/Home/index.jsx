@@ -8,6 +8,96 @@ import React, { useState } from 'react'
 import { useEffect } from 'react';
 
 const Home = () => {
+    const [ loading, setLoading ] = useState(false);
+    function preloadImages(array) {
+        if (!preloadImages.list) {
+            preloadImages.list = [];
+        }
+        var list = preloadImages.list;
+        for (var i = 0; i < array.length; i++) {
+            var img = new Image();
+            img.onload = function () {
+                var index = list.indexOf(this);
+                if (index !== -1) {
+                    list.splice(index, 1);
+                }
+                if (list.length === 0) {
+                    setLoading(true);
+                }
+            }
+            list.push(img);
+            img.src = array[ i ];
+        }
+    }
+
+    useEffect(() => {
+      
+        const imageUrls = [
+           "assets/jokes/(1).jpeg",
+           "assets/jokes/(2).jpeg",
+           "assets/jokes/(3).jpeg",
+           "assets/jokes/(4).jpeg",
+           "assets/jokes/(5).jpeg",
+           "assets/jokes/(6).jpeg",
+           "assets/jokes/(7).jpeg",
+           "assets/jokes/(8).jpeg",
+           "assets/jokes/(9).jpeg",
+           "assets/jokes/(10).jpeg",
+           "assets/jokes/(11).jpeg",
+           "assets/jokes/(12).jpeg",
+           "assets/jokes/(13).jpeg",
+           "assets/jokes/(14).jpeg",
+           "assets/jokes/(15).jpeg",
+           "assets/jokes/(16).jpeg",
+           "assets/jokes/(17).jpeg",
+           "assets/jokes/(18).jpeg",
+           "assets/jokes/(19).jpeg",
+           "assets/jokes/(20).jpeg",
+           "assets/jokes/(21).jpeg",
+           "assets/jokes/(22).jpeg",
+           "assets/jokes/(23).jpeg",
+           "assets/jokes/(24).jpeg",
+           "assets/jokes/(25).jpeg",
+           "assets/jokes/(26).jpeg",
+           "assets/jokes/(27).jpeg",
+           "assets/jokes/(28).jpeg",
+           "assets/jokes/(29).jpeg",
+           "assets/jokes/(30).jpeg",
+           "assets/jokes/(31).jpeg",
+           "assets/jokes/(32).jpeg",
+           "assets/jokes/(33).jpeg",
+           "assets/jokes/(34).jpeg",
+           "assets/jokes/(35).jpeg",
+           "assets/jokes/(36).jpeg",
+           "assets/jokes/(37).jpeg",
+           "assets/jokes/(38).jpeg",
+           "assets/jokes/(39).jpeg",
+           "assets/jokes/(40).jpeg",
+           "assets/jokes/(41).jpeg",
+           "assets/jokes/(42).jpeg",
+           "assets/jokes/(43).jpeg",
+           "assets/jokes/(44).jpeg",
+           "assets/jokes/(45).jpeg",
+           "assets/jokes/(46).jpeg",
+           "assets/jokes/(47).jpeg",
+           "assets/jokes/(48).jpeg",
+           "assets/jokes/(49).jpeg",
+           "assets/jokes/(50).jpeg",
+           "assets/jokes/(51).jpeg",
+           "assets/jokes/(52).jpeg",
+           "assets/jokes/(53).jpeg",
+           "assets/jokes/(54).jpeg",
+           "assets/jokes/(55).jpeg",
+           "assets/jokes/(56).jpeg",
+           "assets/jokes/(57).jpeg",
+           "assets/jokes/(58).jpeg",
+           "assets/jokes/(59).jpeg",
+           "assets/images/dating.jpeg",
+           "assets/images/Save.jpeg",
+           "assets/homePage.jpg",
+        ]
+        preloadImages(imageUrls)
+    }, [])
 
     let greet = ['Hello World!', 'नमस्ते World!', 'Ciao World!', 'Hola World!', 'નમસ્તે World!', 'Hallo World!']
 

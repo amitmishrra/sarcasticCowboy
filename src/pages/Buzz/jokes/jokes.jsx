@@ -3,7 +3,7 @@ import { useState } from "react"
 
 let likedJokes = JSON.parse(localStorage.getItem("likedJokes")) || [];
 
-const Jokes = ({joke, totalLikes, id}) => {
+const Jokes = ({ path, totalLikes, id }) => {
 
     const [isActive, setIsActive] = useState(likedJokes.includes(id));
     const [likes, setLike] = useState(0 || totalLikes);
@@ -53,17 +53,14 @@ const Jokes = ({joke, totalLikes, id}) => {
     }, [likes])
     return (
         <>
-            <div class="container px-6 mx-auto maxWidth">
-                <div class="xl:w-1/2 lg:w-3/4 w-full mx-auto  text-left border-b-2 pt-5 pb-1 ">
-                    <p class="leading-relaxed text-base font-medium quoteTxt">
-                        {joke}
-                    </p>
+            <div className="image w-[95%] md:w-[320px] h-[380px] md:h-[350px] flex flex-col justify-around items-center rounded-[10px] m-auto my-5 md:m-5 borderShadow">
+                <img className="md:max-w-[600px] w-[95%] md:w-[300px] border rounded-[10px] imageShadow"
+                    src={path} alt="" />
 
-                    <div className="heart-btn">
-                        <div className="content flex justify-center item-center w-[60px] mt-[10px]">
+                <div className="heart-btn flex justify-start w-[100%] ml-8">
+                    <div className={isActive ? "content heart-active flex justify-center item-center" : "content flex justify-center item-center"}>
                         <span onClick={handleLike} className={isActive ? "heart heart-active" : "heart"}></span>
-                            <span className={isActive ? "numb heart-active" : "numb"}>{likes}</span>
-                        </div>
+                        <span className={isActive ? "numb heart-active ml-[15px]" : "numb ml-[15px]"}>{likes}</span>
                     </div>
                 </div>
             </div>

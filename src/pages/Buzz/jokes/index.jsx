@@ -4,65 +4,104 @@ import { Blogdata } from "../../Blog";
 import Miniblog from "../../../Components/miniblog";
 import { useEffect, useState } from "react"
 import CircularProgress from '@mui/material/CircularProgress';
+import './jokes.css'
 
-const image = [[
-    1, 2, 3, 4, 5, 6, 7, 8, 9, 10
-], [
-    11, 12, 13, 14, 15, 16, 17, 18, 19, 20
-], [
-    21, 22, 23, 24, 25, 26, 27, 28, 29, 30
-], [
-    31, 32, 33, 34, 35, 36, 37, 38, 39, 40
-], [
-    41, 42, 43, 44, 45, 46, 47, 48, 49, 50
-], [
-    51, 52, 53, 54, 55, 56, 57, 58, 59
-]]
 
 const JokesPage = () => {
     const [JokesData, setJokesData] = useState([]);
     const [index, setIndex] = useState(1);
-
+    const [initial, setInitial] = useState(0);
+    const [final, setFinal] = useState(10);
     const [loader, setLoader] = useState(false)
+    const [image, setImage] = useState("")
+    const [smallImages, setSmallImages] = useState("flex")
+    const [largeImage, setLargeImage] = useState("hidden")
 
     useEffect(() => {
-        setTimeout(() => { setLoader(true) }, 4000)
-    })
 
-    // useEffect(() => {
-    //     fetch("https://sarcasticbackend.vercel.app/getJokes").then(res => res.json()).then(res => setJokesData(res.reverse()))
-    // })
+        console.log("index changed : ", index)
+        setTimeout(() => { setLoader(true) }, 2000)
+        switch (index) {
+            case 1: {
+                setInitial(0);
+                setFinal(12)
+                break;
+            }
+            case 2: {
+                setInitial(12);
+                setFinal(24)
+                break;
+            }
+            case 3: {
+                setInitial(24);
+                setFinal(36)
+                break;
+            }
+            case 4: {
+                setInitial(36);
+                setFinal(48)
+                break;
+            }
+            case 5: {
+                setInitial(48);
+                setFinal(59)
+                break;
+            }
+
+
+            default:
+                break;
+        }
+    }, [index])
+
+    useEffect(() => {
+        fetch("https://sarcasticbackend.vercel.app/getJokes").then(res => res.json()).then(res => setJokesData(res))
+    })
 
 
     const previousPage = () => {
         setLoader(false)
         setIndex(index - 1)
-        setTimeout(() => { setLoader(true) }, 4000)
+        setTimeout(() => { setLoader(true) }, 2000)
     }
 
     const nextPage = () => {
         setLoader(false)
         setIndex(index + 1)
-        setTimeout(() => { setLoader(true) }, 4000)
+        setTimeout(() => { setLoader(true) }, 2000)
     }
 
+    const showImage = (path) => {
+        setImage(path)
+        setSmallImages("md:hidden")
+        setLargeImage("hidden md:flex")
+    }
+
+    const closeImage = ()=>{
+        setSmallImages("md:flex")
+        setLargeImage("md:hidden")
+    }
 
     return (
         <>
-            <main className=" pt-[70px] md:pt-[100px] min-h-[100vh] flex flex-col md:flex-row">
-                <section class="md:w-[70%] flex flex-col items-center justify-between gap-5">
-                    <div className=" flex flex-col items-center gap-5">
+            <main className=" pt-[70px] md:pt-[100px] min-h-[100vh] flex flex-col md:flex-row justify-center maxWidth">
+                <section class=" flex flex-col items-center justify-center w-[100%]">
+                    <div className={" flex-row flex-wrap items-center md:w-[90%] w-[85%] m-auto " + smallImages}>
                         {
                             loader ?
-                               
-                            image[index - 1].map((item) => {
-                                return (
-                                    <img className="md:max-w-[600px] p-5"
-                                        src={"assets/jokes/(" + [item] + ").jpeg"} alt="" />
+
+                                JokesData.slice(initial, final).map((item) => {
+                                    return (
+                                        <>
+                                            <div onClick={() => { showImage(item.path) }}>
+                                                <Jokes path={item.path} totalLikes={item.likes} id={item._id} />
+                                            </div>
+                                        </>
                                     )
-                            })
-                          :
-                                <div className="flex  justify-center flex-col items-center h-[70vh]">
+                                })
+
+                                :
+                                <div className="flex w-[50%] m-auto justify-center flex-col items-center h-[70vh]">
                                     <div className="mb-4 text-[20px]">
                                         Loading Jokes...
                                     </div>
@@ -72,41 +111,30 @@ const JokesPage = () => {
                         }
                     </div>
 
-                    <div className="flex items-center justify-between w-2/3 pb-4">
+
+                    <div className={"largeImg w-[100vw] md:w-[70vw] flex flex-col justify-center items-center rounded-[10px] " + largeImage}>
+                                <div className="cross text-[30px] flex justify-start items-center text-black w-[90%] cursor-pointer" onClick={closeImage}>
+                                ╳
+                                </div>
+
+                        <img className="md:max-w-[600px] md:w-[40%] w-[100%] border rounded-[10px]"
+                            src={image} alt="there is image" />
+                    </div>
+
+                    <div className={"flex items-center justify-between md:w-1/4 w-[50%] pb-4 "  + smallImages}>
                         <button className="leftButton" onClick={previousPage} disabled={index == 1 ? true : false}>
-                            prev
+                            ← Previous
                         </button>
 
                         <div className="current">
                             {index}/6
                         </div>
-                        <button className="rightButton" disabled={index == 6 ? true : false} onClick={nextPage}>next</button>
+                        <button className="rightButton" disabled={index == 5 ? true : false} onClick={nextPage}>Next →</button>
 
                     </div>
                 </section>
 
-                <section className="rightSec p-10 md:px-5  md:py-[20px] border-t-2 md:border-t-0 md:border-l border-[#cecece] md:sticky md:top-[100px] right-0 md:w-[30%] md:h-[100vh] flex items-start justify-center ">
-                    <div className="flex flex-col items-start justify-center">
-                        <p className="md:text-2xl mb-5 text-lg font-medium" >
-                            More from Sarcastic Cowboy</p>
-                        {/* <div className="flex flex-col items-center justify-center "> */}
 
-                        {
-                            Blogdata.map((item) => {
-                                return (
-                                    <Miniblog
-                                        Title={item.Title}
-                                        heading={item.heading}
-                                        paragraph={item.paragraph}
-                                        imgURL={item.imgURL}
-                                        Date={item.Date}
-                                    />
-                                )
-                            })
-                        }
-                        {/* </div> */}
-                    </div>
-                </section>
             </main>
         </>
     )
