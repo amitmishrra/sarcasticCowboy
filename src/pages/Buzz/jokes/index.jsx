@@ -22,12 +22,30 @@ const image = [[
 const JokesPage = () => {
     const [JokesData, setJokesData] = useState([]);
     const [index, setIndex] = useState(1);
-    const pages = [1, 2, 3, 4, 5]
 
+    const [loader, setLoader] = useState(false)
+
+    useEffect(() => {
+        setTimeout(() => { setLoader(true) }, 4000)
+    })
 
     // useEffect(() => {
     //     fetch("https://sarcasticbackend.vercel.app/getJokes").then(res => res.json()).then(res => setJokesData(res.reverse()))
     // })
+
+
+    const previousPage = () => {
+        setLoader(false)
+        setIndex(index - 1)
+        setTimeout(() => { setLoader(true) }, 4000)
+    }
+
+    const nextPage = () => {
+        setLoader(false)
+        setIndex(index + 1)
+        setTimeout(() => { setLoader(true) }, 4000)
+    }
+
 
     return (
         <>
@@ -35,30 +53,35 @@ const JokesPage = () => {
                 <section class="md:w-[70%] flex flex-col items-center justify-between gap-5">
                     <div className=" flex flex-col items-center gap-5">
                         {
+                            loader ?
+                               
                             image[index - 1].map((item) => {
-                                // console.log(item)
                                 return (
                                     <img className="md:max-w-[600px] p-5"
                                         src={"assets/jokes/(" + [item] + ").jpeg"} alt="" />
-                                )
+                                    )
                             })
+                          :
+                                <div className="flex  justify-center flex-col items-center h-[70vh]">
+                                    <div className="mb-4 text-[20px]">
+                                        Loading Jokes...
+                                    </div>
+                                    <CircularProgress />
+                                </div>
+
                         }
                     </div>
 
-                    <div className="flex items-center justify-center w-2/3">
-                        <ul className="flex justify-around gap-5 w-full bg-orange-400">
-                            {
-                                pages.map((item) => {
-                                    return (
-                                        <li>
-                                            <button onClick={() => { setIndex(item) }}>
-                                                {item}
-                                            </button>
-                                        </li>
-                                    )
-                                })
-                            }
-                        </ul>
+                    <div className="flex items-center justify-between w-2/3 pb-4">
+                        <button className="leftButton" onClick={previousPage} disabled={index == 1 ? true : false}>
+                            prev
+                        </button>
+
+                        <div className="current">
+                            {index}/6
+                        </div>
+                        <button className="rightButton" disabled={index == 6 ? true : false} onClick={nextPage}>next</button>
+
                     </div>
                 </section>
 
