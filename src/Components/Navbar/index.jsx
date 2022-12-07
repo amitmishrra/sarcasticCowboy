@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react'
-import { NavLink } from 'react-router-dom'
+import { NavLink, useLocation  } from 'react-router-dom'
 import "./style.css"
 
 export default function Header() {
@@ -7,6 +7,18 @@ export default function Header() {
     const [togglerIcon, setIcon] = useState("navToggler");
     const [ activeIndex, setActiveIndex ] = useState(0);
     
+    const location = useLocation()
+    const paths = ['/',
+    '/blogs',
+    '/quotes',
+    '/jokes',
+    '/about',
+    '/contact']
+
+    useEffect(() => {
+       setActiveIndex(paths.indexOf(location.pathname))
+    })
+
     const navToggle = () => {
         active === 'menu' ?
             setActive('menuActive menu') :

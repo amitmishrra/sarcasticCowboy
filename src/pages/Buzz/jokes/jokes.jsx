@@ -7,9 +7,8 @@ const Jokes = ({ path, totalLikes, id, likeMethod }) => {
 
     const [isActive, setIsActive] = useState(likedJokes.includes(id));
     const [likes, setLike] = useState(0 || totalLikes);
-    const [classes, setClasses] = useState("");
 
-    const handleLike = (currentId) => {
+    const handleLike = () => {
         setIsActive(current => !current);
         if (isActive) {
 
