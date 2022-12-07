@@ -3,7 +3,7 @@ import { useState } from "react"
 
 let likedJokes = JSON.parse(localStorage.getItem("likedJokes")) || [];
 
-const Jokes = ({ path, totalLikes, id }) => {
+const Jokes = ({ path, totalLikes, id, likeMethod }) => {
 
     const [isActive, setIsActive] = useState(likedJokes.includes(id));
     const [likes, setLike] = useState(0 || totalLikes);
@@ -55,7 +55,7 @@ const Jokes = ({ path, totalLikes, id }) => {
         <>
             <div className="image w-[95%] md:w-[320px] h-[380px] md:h-[350px] flex flex-col justify-around items-center rounded-[10px] m-auto my-5 md:m-5 borderShadow">
                 <img className="md:max-w-[600px] w-[95%] md:w-[300px] border rounded-[10px] imageShadow"
-                    src={path} alt="" />
+                    src={path} alt="" onClick={()=>{likeMethod(path)}} />
 
                 <div className="heart-btn flex justify-start w-[100%] ml-8">
                     <div className={isActive ? "content heart-active flex justify-center item-center" : "content flex justify-center item-center"}>

@@ -93,8 +93,8 @@ const JokesPage = () => {
                                 JokesData.slice(initial, final).map((item) => {
                                     return (
                                         <>
-                                            <div onClick={() => { showImage(item.path) }}>
-                                                <Jokes path={item.path} totalLikes={item.likes} id={item._id} />
+                                            <div>
+                                                <Jokes path={item.path} totalLikes={item.likes} id={item._id} likeMethod={showImage}/>
                                             </div>
                                         </>
                                     )
